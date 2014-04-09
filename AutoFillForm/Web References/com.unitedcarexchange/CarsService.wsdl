@@ -1,0 +1,2853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMakes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakesResult" type="tns:ArrayOfMakesInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMakesInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MakesInfo" nillable="true" type="tns:MakesInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MakesInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MakeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Make" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetModelsInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetModelsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModelsInfoResult" type="tns:ArrayOfModelsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfModelsInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModelsInfo" nillable="true" type="tns:ModelsInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModelsInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MakeModelID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MakeID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetModelsInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModelsInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModelsInfoByIDResult" type="tns:ArrayOfModelsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsMultiSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchArray" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UsedCarsInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PostingID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarUniqueID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Carid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SellerID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfPosting" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpirtyDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PackageID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="InternalreviewID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelledBy" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelledReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelledDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zipcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Uid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AltPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AltEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotesForBuyers" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Make" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearOfMake" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mileage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MakeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MakeModelID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bodytype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BodytypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fueltype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FueltypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExteriorColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumberOfSeats" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumberOfDoors" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumberOfCylinder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Transmission" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InteriorColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserFeedback" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleConditionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC0" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC0" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICLOC20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIC20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalRecords" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PageCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConditionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriveTrain" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayActive" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ListingActive" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActiveSince" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DealerUniqueID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PublishedDt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseCost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdatedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID0" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PICID20" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUsedCarsInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UsedCarsInfo" nillable="true" type="tns:UsedCarsInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCarsMultiSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsMultiSearchResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCarID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCarIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindCarIDResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="productionFindCarID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="productionFindCarIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productionFindCarIDResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptedCarID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptedCarIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedCarIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SortMultiData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFilterType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SortMultiDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SortMultiDataResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SortData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFilterType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SortDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SortDataResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentCarsMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCurrentPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Orderby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sort" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentCarsMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecentCarsMobileResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carMakeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarModalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WithinZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageresultscount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsSearchResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsSearchJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carMakeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarModalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WithinZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageresultscount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsSearchJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsSearchJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPageMultiData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPageMultiDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPageMultiDataResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPageDataResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsAds">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarsAdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsAdsResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarBannerAds">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarBannerAdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarBannerAdsResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsSearchPage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarsSearchPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsSearchPageResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchCriteriaSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carMakeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarModalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WithinZip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchCriteriaSaveResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSearchCriteria">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSearchCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSearchCriteriaResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterNext">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AFilter" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageResultsCount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CurrentPage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterNextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsFilterNextResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carMakeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarModalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mileage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sort" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Orderby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrentPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsFilterMobileResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AFilter" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageResultsCount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsFilterResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterMulti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AFilter" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageResultsCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsFilterMultiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsFilterMultiResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchedCar">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchedCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchedCarResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckZips">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckZipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckZipsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarFeatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarFeaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarFeaturesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentListings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRecentListingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecentListingsResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentListingsMobile">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRecentListingsMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecentListingsMobileResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveZipResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNearCities">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNearCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNearCitiesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNearStates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNearStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNearStatesResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimialarCars">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimialarCarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SimialarCarsResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarFeatures_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarFeatures_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarFeatures_NewResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCarIDNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCarid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCarIDNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindCarIDNewResult" type="tns:ArrayOfUsedCarsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfMakesInfo" nillable="true" type="tns:ArrayOfMakesInfo" />
+      <s:element name="ArrayOfModelsInfo" nillable="true" type="tns:ArrayOfModelsInfo" />
+      <s:element name="ArrayOfUsedCarsInfo" nillable="true" type="tns:ArrayOfUsedCarsInfo" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMakesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakes" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModelsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModelsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModelsInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModelsInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsMultiSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsMultiSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsMultiSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsMultiSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDSoapIn">
+    <wsdl:part name="parameters" element="tns:FindCarID" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDSoapOut">
+    <wsdl:part name="parameters" element="tns:FindCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDSoapIn">
+    <wsdl:part name="parameters" element="tns:productionFindCarID" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDSoapOut">
+    <wsdl:part name="parameters" element="tns:productionFindCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDSoapIn">
+    <wsdl:part name="parameters" element="tns:EncryptedCarID" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptedCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SortMultiData" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SortMultiDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SortDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SortData" />
+  </wsdl:message>
+  <wsdl:message name="SortDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SortDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecentCarsMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecentCarsMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsSearchJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsSearchJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPageMultiData" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPageMultiDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPageData" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsAdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsAds" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsAdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarBannerAdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarBannerAds" />
+  </wsdl:message>
+  <wsdl:message name="GetCarBannerAdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarBannerAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsSearchPage" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsSearchPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchCriteriaSave" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchCriteriaSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSearchCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSearchCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetSearchCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSearchCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterNextSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterNext" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterNextSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterNextResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsFilter" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMultiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterMulti" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMultiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsFilterMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchedCarSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchedCar" />
+  </wsdl:message>
+  <wsdl:message name="SearchedCarSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchedCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckZips" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckZipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarFeatures" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecentListings" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecentListingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecentListingsMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecentListingsMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveZip" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNearCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNearCities" />
+  </wsdl:message>
+  <wsdl:message name="GetNearCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNearCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNearStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNearStates" />
+  </wsdl:message>
+  <wsdl:message name="GetNearStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNearStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsSoapIn">
+    <wsdl:part name="parameters" element="tns:SimialarCars" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsSoapOut">
+    <wsdl:part name="parameters" element="tns:SimialarCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarFeatures_New" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarFeatures_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewSoapIn">
+    <wsdl:part name="parameters" element="tns:FindCarIDNew" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewSoapOut">
+    <wsdl:part name="parameters" element="tns:FindCarIDNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesHttpGetIn" />
+  <wsdl:message name="GetMakesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMakesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoHttpGetIn" />
+  <wsdl:message name="GetModelsInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfModelsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDHttpGetIn">
+    <wsdl:part name="MakeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfModelsInfo" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDHttpGetIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDHttpGetIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDHttpGetIn">
+    <wsdl:part name="sCarID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataHttpGetIn">
+    <wsdl:part name="sFilterType" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SortDataHttpGetIn">
+    <wsdl:part name="sFilterType" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SortDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileHttpGetIn">
+    <wsdl:part name="sCurrentPage" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="Orderby" type="s:string" />
+    <wsdl:part name="Sort" type="s:string" />
+    <wsdl:part name="sPin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchHttpGetIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+    <wsdl:part name="pageNo" type="s:string" />
+    <wsdl:part name="pageresultscount" type="s:string" />
+    <wsdl:part name="orderby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONHttpGetIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+    <wsdl:part name="pageNo" type="s:string" />
+    <wsdl:part name="pageresultscount" type="s:string" />
+    <wsdl:part name="orderby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataHttpGetIn">
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataHttpGetIn">
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsAdsHttpGetIn" />
+  <wsdl:message name="GetCarsAdsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarBannerAdsHttpGetIn" />
+  <wsdl:message name="GetCarBannerAdsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchPageHttpGetIn" />
+  <wsdl:message name="GetCarsSearchPageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveHttpGetIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveHttpGetOut" />
+  <wsdl:message name="GetSearchCriteriaHttpGetIn" />
+  <wsdl:message name="GetSearchCriteriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileHttpGetIn">
+    <wsdl:part name="carMakeID" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="Mileage" type="s:string" />
+    <wsdl:part name="Year" type="s:string" />
+    <wsdl:part name="Price" type="s:string" />
+    <wsdl:part name="Sort" type="s:string" />
+    <wsdl:part name="Orderby" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="CurrentPage" type="s:string" />
+    <wsdl:part name="zipCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchedCarHttpGetIn" />
+  <wsdl:message name="SearchedCarHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsHttpGetIn">
+    <wsdl:part name="zipId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesHttpGetIn">
+    <wsdl:part name="sCarId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsHttpGetIn" />
+  <wsdl:message name="GetRecentListingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsMobileHttpGetIn" />
+  <wsdl:message name="GetRecentListingsMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipHttpGetIn">
+    <wsdl:part name="zipId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetNearCitiesHttpGetIn" />
+  <wsdl:message name="GetNearCitiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetNearStatesHttpGetIn" />
+  <wsdl:message name="GetNearStatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsHttpGetIn">
+    <wsdl:part name="MakeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewHttpGetIn">
+    <wsdl:part name="sCarId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewHttpGetIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesHttpPostIn" />
+  <wsdl:message name="GetMakesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMakesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoHttpPostIn" />
+  <wsdl:message name="GetModelsInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfModelsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDHttpPostIn">
+    <wsdl:part name="MakeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfModelsInfo" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDHttpPostIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDHttpPostIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="productionFindCarIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDHttpPostIn">
+    <wsdl:part name="sCarID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptedCarIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataHttpPostIn">
+    <wsdl:part name="sFilterType" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SortMultiDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SortDataHttpPostIn">
+    <wsdl:part name="sFilterType" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SortDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileHttpPostIn">
+    <wsdl:part name="sCurrentPage" type="s:string" />
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="Orderby" type="s:string" />
+    <wsdl:part name="Sort" type="s:string" />
+    <wsdl:part name="sPin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentCarsMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchHttpPostIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+    <wsdl:part name="pageNo" type="s:string" />
+    <wsdl:part name="pageresultscount" type="s:string" />
+    <wsdl:part name="orderby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONHttpPostIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+    <wsdl:part name="pageNo" type="s:string" />
+    <wsdl:part name="pageresultscount" type="s:string" />
+    <wsdl:part name="orderby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchJSONHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataHttpPostIn">
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageMultiDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataHttpPostIn">
+    <wsdl:part name="PageSize" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsAdsHttpPostIn" />
+  <wsdl:message name="GetCarsAdsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarBannerAdsHttpPostIn" />
+  <wsdl:message name="GetCarBannerAdsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsSearchPageHttpPostIn" />
+  <wsdl:message name="GetCarsSearchPageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveHttpPostIn">
+    <wsdl:part name="carMakeid" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="WithinZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchCriteriaSaveHttpPostOut" />
+  <wsdl:message name="GetSearchCriteriaHttpPostIn" />
+  <wsdl:message name="GetSearchCriteriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileHttpPostIn">
+    <wsdl:part name="carMakeID" type="s:string" />
+    <wsdl:part name="CarModalId" type="s:string" />
+    <wsdl:part name="Mileage" type="s:string" />
+    <wsdl:part name="Year" type="s:string" />
+    <wsdl:part name="Price" type="s:string" />
+    <wsdl:part name="Sort" type="s:string" />
+    <wsdl:part name="Orderby" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="CurrentPage" type="s:string" />
+    <wsdl:part name="zipCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsFilterMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchedCarHttpPostIn" />
+  <wsdl:message name="SearchedCarHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsHttpPostIn">
+    <wsdl:part name="zipId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckZipsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesHttpPostIn">
+    <wsdl:part name="sCarId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeaturesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsHttpPostIn" />
+  <wsdl:message name="GetRecentListingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentListingsMobileHttpPostIn" />
+  <wsdl:message name="GetRecentListingsMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipHttpPostIn">
+    <wsdl:part name="zipId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveZipHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetNearCitiesHttpPostIn" />
+  <wsdl:message name="GetNearCitiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetNearStatesHttpPostIn" />
+  <wsdl:message name="GetNearStatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsHttpPostIn">
+    <wsdl:part name="MakeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SimialarCarsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewHttpPostIn">
+    <wsdl:part name="sCarId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarFeatures_NewHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewHttpPostIn">
+    <wsdl:part name="sCarid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindCarIDNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsedCarsInfo" />
+  </wsdl:message>
+  <wsdl:portType name="CarsServiceSoap">
+    <wsdl:operation name="GetMakes">
+      <wsdl:input message="tns:GetMakesSoapIn" />
+      <wsdl:output message="tns:GetMakesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <wsdl:input message="tns:GetModelsInfoSoapIn" />
+      <wsdl:output message="tns:GetModelsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <wsdl:input message="tns:GetModelsInfoByIDSoapIn" />
+      <wsdl:output message="tns:GetModelsInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsMultiSearch">
+      <wsdl:input message="tns:GetCarsMultiSearchSoapIn" />
+      <wsdl:output message="tns:GetCarsMultiSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <wsdl:input message="tns:FindCarIDSoapIn" />
+      <wsdl:output message="tns:FindCarIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <wsdl:input message="tns:productionFindCarIDSoapIn" />
+      <wsdl:output message="tns:productionFindCarIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <wsdl:input message="tns:EncryptedCarIDSoapIn" />
+      <wsdl:output message="tns:EncryptedCarIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <wsdl:input message="tns:SortMultiDataSoapIn" />
+      <wsdl:output message="tns:SortMultiDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <wsdl:input message="tns:SortDataSoapIn" />
+      <wsdl:output message="tns:SortDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <wsdl:input message="tns:GetRecentCarsMobileSoapIn" />
+      <wsdl:output message="tns:GetRecentCarsMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <wsdl:input message="tns:GetCarsSearchSoapIn" />
+      <wsdl:output message="tns:GetCarsSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <wsdl:input message="tns:GetCarsSearchJSONSoapIn" />
+      <wsdl:output message="tns:GetCarsSearchJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <wsdl:input message="tns:GetPageMultiDataSoapIn" />
+      <wsdl:output message="tns:GetPageMultiDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <wsdl:input message="tns:GetPageDataSoapIn" />
+      <wsdl:output message="tns:GetPageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <wsdl:input message="tns:GetCarsAdsSoapIn" />
+      <wsdl:output message="tns:GetCarsAdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <wsdl:input message="tns:GetCarBannerAdsSoapIn" />
+      <wsdl:output message="tns:GetCarBannerAdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <wsdl:input message="tns:GetCarsSearchPageSoapIn" />
+      <wsdl:output message="tns:GetCarsSearchPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <wsdl:input message="tns:SearchCriteriaSaveSoapIn" />
+      <wsdl:output message="tns:SearchCriteriaSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <wsdl:input message="tns:GetSearchCriteriaSoapIn" />
+      <wsdl:output message="tns:GetSearchCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterNext">
+      <wsdl:input message="tns:GetCarsFilterNextSoapIn" />
+      <wsdl:output message="tns:GetCarsFilterNextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <wsdl:input message="tns:GetCarsFilterMobileSoapIn" />
+      <wsdl:output message="tns:GetCarsFilterMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilter">
+      <wsdl:input message="tns:GetCarsFilterSoapIn" />
+      <wsdl:output message="tns:GetCarsFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMulti">
+      <wsdl:input message="tns:GetCarsFilterMultiSoapIn" />
+      <wsdl:output message="tns:GetCarsFilterMultiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <wsdl:input message="tns:SearchedCarSoapIn" />
+      <wsdl:output message="tns:SearchedCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <wsdl:input message="tns:CheckZipsSoapIn" />
+      <wsdl:output message="tns:CheckZipsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <wsdl:input message="tns:GetCarFeaturesSoapIn" />
+      <wsdl:output message="tns:GetCarFeaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <wsdl:input message="tns:GetRecentListingsSoapIn" />
+      <wsdl:output message="tns:GetRecentListingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <wsdl:input message="tns:GetRecentListingsMobileSoapIn" />
+      <wsdl:output message="tns:GetRecentListingsMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <wsdl:input message="tns:SaveZipSoapIn" />
+      <wsdl:output message="tns:SaveZipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <wsdl:input message="tns:GetNearCitiesSoapIn" />
+      <wsdl:output message="tns:GetNearCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <wsdl:input message="tns:GetNearStatesSoapIn" />
+      <wsdl:output message="tns:GetNearStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <wsdl:input message="tns:SimialarCarsSoapIn" />
+      <wsdl:output message="tns:SimialarCarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <wsdl:input message="tns:GetCarFeatures_NewSoapIn" />
+      <wsdl:output message="tns:GetCarFeatures_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <wsdl:input message="tns:FindCarIDNewSoapIn" />
+      <wsdl:output message="tns:FindCarIDNewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CarsServiceHttpGet">
+    <wsdl:operation name="GetMakes">
+      <wsdl:input message="tns:GetMakesHttpGetIn" />
+      <wsdl:output message="tns:GetMakesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <wsdl:input message="tns:GetModelsInfoHttpGetIn" />
+      <wsdl:output message="tns:GetModelsInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <wsdl:input message="tns:GetModelsInfoByIDHttpGetIn" />
+      <wsdl:output message="tns:GetModelsInfoByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <wsdl:input message="tns:FindCarIDHttpGetIn" />
+      <wsdl:output message="tns:FindCarIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <wsdl:input message="tns:productionFindCarIDHttpGetIn" />
+      <wsdl:output message="tns:productionFindCarIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <wsdl:input message="tns:EncryptedCarIDHttpGetIn" />
+      <wsdl:output message="tns:EncryptedCarIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <wsdl:input message="tns:SortMultiDataHttpGetIn" />
+      <wsdl:output message="tns:SortMultiDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <wsdl:input message="tns:SortDataHttpGetIn" />
+      <wsdl:output message="tns:SortDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <wsdl:input message="tns:GetRecentCarsMobileHttpGetIn" />
+      <wsdl:output message="tns:GetRecentCarsMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <wsdl:input message="tns:GetCarsSearchHttpGetIn" />
+      <wsdl:output message="tns:GetCarsSearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <wsdl:input message="tns:GetCarsSearchJSONHttpGetIn" />
+      <wsdl:output message="tns:GetCarsSearchJSONHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <wsdl:input message="tns:GetPageMultiDataHttpGetIn" />
+      <wsdl:output message="tns:GetPageMultiDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <wsdl:input message="tns:GetPageDataHttpGetIn" />
+      <wsdl:output message="tns:GetPageDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <wsdl:input message="tns:GetCarsAdsHttpGetIn" />
+      <wsdl:output message="tns:GetCarsAdsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <wsdl:input message="tns:GetCarBannerAdsHttpGetIn" />
+      <wsdl:output message="tns:GetCarBannerAdsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <wsdl:input message="tns:GetCarsSearchPageHttpGetIn" />
+      <wsdl:output message="tns:GetCarsSearchPageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <wsdl:input message="tns:SearchCriteriaSaveHttpGetIn" />
+      <wsdl:output message="tns:SearchCriteriaSaveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <wsdl:input message="tns:GetSearchCriteriaHttpGetIn" />
+      <wsdl:output message="tns:GetSearchCriteriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <wsdl:input message="tns:GetCarsFilterMobileHttpGetIn" />
+      <wsdl:output message="tns:GetCarsFilterMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <wsdl:input message="tns:SearchedCarHttpGetIn" />
+      <wsdl:output message="tns:SearchedCarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <wsdl:input message="tns:CheckZipsHttpGetIn" />
+      <wsdl:output message="tns:CheckZipsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <wsdl:input message="tns:GetCarFeaturesHttpGetIn" />
+      <wsdl:output message="tns:GetCarFeaturesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <wsdl:input message="tns:GetRecentListingsHttpGetIn" />
+      <wsdl:output message="tns:GetRecentListingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <wsdl:input message="tns:GetRecentListingsMobileHttpGetIn" />
+      <wsdl:output message="tns:GetRecentListingsMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <wsdl:input message="tns:SaveZipHttpGetIn" />
+      <wsdl:output message="tns:SaveZipHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <wsdl:input message="tns:GetNearCitiesHttpGetIn" />
+      <wsdl:output message="tns:GetNearCitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <wsdl:input message="tns:GetNearStatesHttpGetIn" />
+      <wsdl:output message="tns:GetNearStatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <wsdl:input message="tns:SimialarCarsHttpGetIn" />
+      <wsdl:output message="tns:SimialarCarsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <wsdl:input message="tns:GetCarFeatures_NewHttpGetIn" />
+      <wsdl:output message="tns:GetCarFeatures_NewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <wsdl:input message="tns:FindCarIDNewHttpGetIn" />
+      <wsdl:output message="tns:FindCarIDNewHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CarsServiceHttpPost">
+    <wsdl:operation name="GetMakes">
+      <wsdl:input message="tns:GetMakesHttpPostIn" />
+      <wsdl:output message="tns:GetMakesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <wsdl:input message="tns:GetModelsInfoHttpPostIn" />
+      <wsdl:output message="tns:GetModelsInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <wsdl:input message="tns:GetModelsInfoByIDHttpPostIn" />
+      <wsdl:output message="tns:GetModelsInfoByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <wsdl:input message="tns:FindCarIDHttpPostIn" />
+      <wsdl:output message="tns:FindCarIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <wsdl:input message="tns:productionFindCarIDHttpPostIn" />
+      <wsdl:output message="tns:productionFindCarIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <wsdl:input message="tns:EncryptedCarIDHttpPostIn" />
+      <wsdl:output message="tns:EncryptedCarIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <wsdl:input message="tns:SortMultiDataHttpPostIn" />
+      <wsdl:output message="tns:SortMultiDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <wsdl:input message="tns:SortDataHttpPostIn" />
+      <wsdl:output message="tns:SortDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <wsdl:input message="tns:GetRecentCarsMobileHttpPostIn" />
+      <wsdl:output message="tns:GetRecentCarsMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <wsdl:input message="tns:GetCarsSearchHttpPostIn" />
+      <wsdl:output message="tns:GetCarsSearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <wsdl:input message="tns:GetCarsSearchJSONHttpPostIn" />
+      <wsdl:output message="tns:GetCarsSearchJSONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <wsdl:input message="tns:GetPageMultiDataHttpPostIn" />
+      <wsdl:output message="tns:GetPageMultiDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <wsdl:input message="tns:GetPageDataHttpPostIn" />
+      <wsdl:output message="tns:GetPageDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <wsdl:input message="tns:GetCarsAdsHttpPostIn" />
+      <wsdl:output message="tns:GetCarsAdsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <wsdl:input message="tns:GetCarBannerAdsHttpPostIn" />
+      <wsdl:output message="tns:GetCarBannerAdsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <wsdl:input message="tns:GetCarsSearchPageHttpPostIn" />
+      <wsdl:output message="tns:GetCarsSearchPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <wsdl:input message="tns:SearchCriteriaSaveHttpPostIn" />
+      <wsdl:output message="tns:SearchCriteriaSaveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <wsdl:input message="tns:GetSearchCriteriaHttpPostIn" />
+      <wsdl:output message="tns:GetSearchCriteriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <wsdl:input message="tns:GetCarsFilterMobileHttpPostIn" />
+      <wsdl:output message="tns:GetCarsFilterMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <wsdl:input message="tns:SearchedCarHttpPostIn" />
+      <wsdl:output message="tns:SearchedCarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <wsdl:input message="tns:CheckZipsHttpPostIn" />
+      <wsdl:output message="tns:CheckZipsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <wsdl:input message="tns:GetCarFeaturesHttpPostIn" />
+      <wsdl:output message="tns:GetCarFeaturesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <wsdl:input message="tns:GetRecentListingsHttpPostIn" />
+      <wsdl:output message="tns:GetRecentListingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <wsdl:input message="tns:GetRecentListingsMobileHttpPostIn" />
+      <wsdl:output message="tns:GetRecentListingsMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <wsdl:input message="tns:SaveZipHttpPostIn" />
+      <wsdl:output message="tns:SaveZipHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <wsdl:input message="tns:GetNearCitiesHttpPostIn" />
+      <wsdl:output message="tns:GetNearCitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <wsdl:input message="tns:GetNearStatesHttpPostIn" />
+      <wsdl:output message="tns:GetNearStatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <wsdl:input message="tns:SimialarCarsHttpPostIn" />
+      <wsdl:output message="tns:SimialarCarsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <wsdl:input message="tns:GetCarFeatures_NewHttpPostIn" />
+      <wsdl:output message="tns:GetCarFeatures_NewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <wsdl:input message="tns:FindCarIDNewHttpPostIn" />
+      <wsdl:output message="tns:FindCarIDNewHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CarsServiceSoap" type="tns:CarsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMakes">
+      <soap:operation soapAction="http://tempuri.org/GetMakes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetModelsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <soap:operation soapAction="http://tempuri.org/GetModelsInfoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsMultiSearch">
+      <soap:operation soapAction="http://tempuri.org/GetCarsMultiSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <soap:operation soapAction="http://tempuri.org/FindCarID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <soap:operation soapAction="http://tempuri.org/productionFindCarID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <soap:operation soapAction="http://tempuri.org/EncryptedCarID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <soap:operation soapAction="http://tempuri.org/SortMultiData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <soap:operation soapAction="http://tempuri.org/SortData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <soap:operation soapAction="http://tempuri.org/GetRecentCarsMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <soap:operation soapAction="http://tempuri.org/GetCarsSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <soap:operation soapAction="http://tempuri.org/GetCarsSearchJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <soap:operation soapAction="http://tempuri.org/GetPageMultiData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <soap:operation soapAction="http://tempuri.org/GetPageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <soap:operation soapAction="http://tempuri.org/GetCarsAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <soap:operation soapAction="http://tempuri.org/GetCarBannerAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <soap:operation soapAction="http://tempuri.org/GetCarsSearchPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <soap:operation soapAction="http://tempuri.org/SearchCriteriaSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <soap:operation soapAction="http://tempuri.org/GetSearchCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterNext">
+      <soap:operation soapAction="http://tempuri.org/GetCarsFilterNext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <soap:operation soapAction="http://tempuri.org/GetCarsFilterMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilter">
+      <soap:operation soapAction="http://tempuri.org/GetCarsFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMulti">
+      <soap:operation soapAction="http://tempuri.org/GetCarsFilterMulti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <soap:operation soapAction="http://tempuri.org/SearchedCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <soap:operation soapAction="http://tempuri.org/CheckZips" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <soap:operation soapAction="http://tempuri.org/GetCarFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <soap:operation soapAction="http://tempuri.org/GetRecentListings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <soap:operation soapAction="http://tempuri.org/GetRecentListingsMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <soap:operation soapAction="http://tempuri.org/SaveZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <soap:operation soapAction="http://tempuri.org/GetNearCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <soap:operation soapAction="http://tempuri.org/GetNearStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <soap:operation soapAction="http://tempuri.org/SimialarCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <soap:operation soapAction="http://tempuri.org/GetCarFeatures_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <soap:operation soapAction="http://tempuri.org/FindCarIDNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarsServiceSoap12" type="tns:CarsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMakes">
+      <soap12:operation soapAction="http://tempuri.org/GetMakes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetModelsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <soap12:operation soapAction="http://tempuri.org/GetModelsInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsMultiSearch">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsMultiSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <soap12:operation soapAction="http://tempuri.org/FindCarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <soap12:operation soapAction="http://tempuri.org/productionFindCarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <soap12:operation soapAction="http://tempuri.org/EncryptedCarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <soap12:operation soapAction="http://tempuri.org/SortMultiData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <soap12:operation soapAction="http://tempuri.org/SortData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <soap12:operation soapAction="http://tempuri.org/GetRecentCarsMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsSearchJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <soap12:operation soapAction="http://tempuri.org/GetPageMultiData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <soap12:operation soapAction="http://tempuri.org/GetPageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsAds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <soap12:operation soapAction="http://tempuri.org/GetCarBannerAds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsSearchPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <soap12:operation soapAction="http://tempuri.org/SearchCriteriaSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <soap12:operation soapAction="http://tempuri.org/GetSearchCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterNext">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsFilterNext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsFilterMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilter">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMulti">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsFilterMulti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <soap12:operation soapAction="http://tempuri.org/SearchedCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <soap12:operation soapAction="http://tempuri.org/CheckZips" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <soap12:operation soapAction="http://tempuri.org/GetCarFeatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <soap12:operation soapAction="http://tempuri.org/GetRecentListings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <soap12:operation soapAction="http://tempuri.org/GetRecentListingsMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <soap12:operation soapAction="http://tempuri.org/SaveZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <soap12:operation soapAction="http://tempuri.org/GetNearCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <soap12:operation soapAction="http://tempuri.org/GetNearStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <soap12:operation soapAction="http://tempuri.org/SimialarCars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <soap12:operation soapAction="http://tempuri.org/GetCarFeatures_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <soap12:operation soapAction="http://tempuri.org/FindCarIDNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarsServiceHttpGet" type="tns:CarsServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetMakes">
+      <http:operation location="/GetMakes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <http:operation location="/GetModelsInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <http:operation location="/GetModelsInfoByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <http:operation location="/FindCarID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <http:operation location="/productionFindCarID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <http:operation location="/EncryptedCarID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <http:operation location="/SortMultiData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <http:operation location="/SortData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <http:operation location="/GetRecentCarsMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <http:operation location="/GetCarsSearch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <http:operation location="/GetCarsSearchJSON" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <http:operation location="/GetPageMultiData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <http:operation location="/GetPageData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <http:operation location="/GetCarsAds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <http:operation location="/GetCarBannerAds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <http:operation location="/GetCarsSearchPage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <http:operation location="/SearchCriteriaSave" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <http:operation location="/GetSearchCriteria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <http:operation location="/GetCarsFilterMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <http:operation location="/SearchedCar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <http:operation location="/CheckZips" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <http:operation location="/GetCarFeatures" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <http:operation location="/GetRecentListings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <http:operation location="/GetRecentListingsMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <http:operation location="/SaveZip" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <http:operation location="/GetNearCities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <http:operation location="/GetNearStates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <http:operation location="/SimialarCars" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <http:operation location="/GetCarFeatures_New" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <http:operation location="/FindCarIDNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarsServiceHttpPost" type="tns:CarsServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetMakes">
+      <http:operation location="/GetMakes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfo">
+      <http:operation location="/GetModelsInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByID">
+      <http:operation location="/GetModelsInfoByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarID">
+      <http:operation location="/FindCarID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="productionFindCarID">
+      <http:operation location="/productionFindCarID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptedCarID">
+      <http:operation location="/EncryptedCarID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortMultiData">
+      <http:operation location="/SortMultiData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortData">
+      <http:operation location="/SortData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCarsMobile">
+      <http:operation location="/GetRecentCarsMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearch">
+      <http:operation location="/GetCarsSearch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchJSON">
+      <http:operation location="/GetCarsSearchJSON" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMultiData">
+      <http:operation location="/GetPageMultiData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <http:operation location="/GetPageData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsAds">
+      <http:operation location="/GetCarsAds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarBannerAds">
+      <http:operation location="/GetCarBannerAds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsSearchPage">
+      <http:operation location="/GetCarsSearchPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCriteriaSave">
+      <http:operation location="/SearchCriteriaSave" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchCriteria">
+      <http:operation location="/GetSearchCriteria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsFilterMobile">
+      <http:operation location="/GetCarsFilterMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchedCar">
+      <http:operation location="/SearchedCar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZips">
+      <http:operation location="/CheckZips" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures">
+      <http:operation location="/GetCarFeatures" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListings">
+      <http:operation location="/GetRecentListings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentListingsMobile">
+      <http:operation location="/GetRecentListingsMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZip">
+      <http:operation location="/SaveZip" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearCities">
+      <http:operation location="/GetNearCities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearStates">
+      <http:operation location="/GetNearStates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimialarCars">
+      <http:operation location="/SimialarCars" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarFeatures_New">
+      <http:operation location="/GetCarFeatures_New" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCarIDNew">
+      <http:operation location="/FindCarIDNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarsService">
+    <wsdl:port name="CarsServiceSoap" binding="tns:CarsServiceSoap">
+      <soap:address location="http://unitedcarexchange.com/CarService/CarsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarsServiceSoap12" binding="tns:CarsServiceSoap12">
+      <soap12:address location="http://unitedcarexchange.com/CarService/CarsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarsServiceHttpGet" binding="tns:CarsServiceHttpGet">
+      <http:address location="http://unitedcarexchange.com/CarService/CarsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarsServiceHttpPost" binding="tns:CarsServiceHttpPost">
+      <http:address location="http://unitedcarexchange.com/CarService/CarsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
