@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBEC14B8-D294-4F56-AD46-06AB172FC125}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoFillForm</RootNamespace>
+    <AssemblyName>AutoFillForm</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CarsBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\CarsBL.dll</HintPath>
+    </Reference>
+    <Reference Include="CarsInfo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\CarsInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cardll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adpost us.cs" />
+    <Compile Include="cargurus.cs" />
+    <Compile Include="classifieds-blackworld.cs" />
+    <Compile Include="classifiedsvalley1.cs" />
+    <Compile Include="extraclassifieds.cs" />
+    <Compile Include="FaceBook.cs" />
+    <Compile Include="freead1.cs" />
+    <Compile Include="General\Count Url for carid.cs" />
+    <Compile Include="General\Description.cs" />
+    <Compile Include="General\EmailCreation.cs" />
+    <Compile Include="General\ExcelFormat.cs" />
+    <Compile Include="General\FastExcelExportingDemoCs.cs" />
+    <Compile Include="Hot9Ads.cs" />
+    <Compile Include="local99search.cs" />
+    <Compile Include="a1classiccars.cs" />
+    <Compile Include="adsciti.cs" />
+    <Compile Include="Adsriver.cs" />
+    <Compile Include="Always.cs" />
+    <Compile Include="anunico.cs" />
+    <Compile Include="CarPosts.cs" />
+    <Compile Include="CircularProgressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CircularProgressControl.Designer.cs">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassifiedEditor.cs" />
+    <Compile Include="classifieds4me.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EnterNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterNotes.Designer.cs">
+      <DependentUpon>EnterNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="epage.cs" />
+    <Compile Include="GetDetails.cs" />
+    <Compile Include="GetEditionState.cs" />
+    <Compile Include="GetStatesMotoseller.cs" />
+    <Compile Include="HomeStatictics.cs" />
+    <Compile Include="Jeanza.cs" />
+    <Compile Include="Kugli.cs" />
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="freeadsinus.cs" />
+    <Compile Include="glasyads.cs" />
+    <Compile Include="highlandclassifieds.cs" />
+    <Compile Include="JustgoodCars.cs" />
+    <Compile Include="ClassifiedsForFree.cs" />
+    <Compile Include="ClazOrg.cs" />
+    <Compile Include="AmericanClassifieds.cs" />
+    <Compile Include="kedna.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enter Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enter Notes.Designer.cs">
+      <DependentUpon>Enter Notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="meetpark.cs" />
+    <Compile Include="myadmonster.cs" />
+    <Compile Include="Pics.cs" />
+    <Compile Include="Pintrest.cs" />
+    <Compile Include="PostFreeAdshere.cs" />
+    <Compile Include="soavo.cs" />
+    <Compile Include="StateName.cs" />
+    <Compile Include="SubPopUrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubPopUrl.Designer.cs">
+      <DependentUpon>SubPopUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tumblr.cs" />
+    <Compile Include="UsnetAds.cs" />
+    <Compile Include="Usadsciti.cs" />
+    <Compile Include="FreeAutoShopper.cs" />
+    <Compile Include="adoos.cs" />
+    <Compile Include="ClassifiedAdds.cs" />
+    <Compile Include="ebayclassifieds.cs" />
+    <Compile Include="fastautosales.cs" />
+    <Compile Include="reachoo.cs" />
+    <Compile Include="cathaylist.cs" />
+    <Compile Include="backpage.cs" />
+    <Compile Include="adlandpro.cs" />
+    <Compile Include="carsforsale.cs" />
+    <Compile Include="Boss33.cs" />
+    <Compile Include="list2click.cs" />
+    <Compile Include="cardaddy.cs" />
+    <Compile Include="Motoseller.cs" />
+    <Compile Include="collectorcarads.cs" />
+    <Compile Include="classifiedsvalley.cs" />
+    <Compile Include="classifiedsciti.cs" />
+    <Compile Include="Recycler.cs" />
+    <Compile Include="Sellmycar.cs" />
+    <Compile Include="Sell.cs" />
+    <Compile Include="Vn75.cs" />
+    <Compile Include="Locanto.cs" />
+    <Compile Include="biggestclassifieds.cs" />
+    <Compile Include="Autoii.cs" />
+    <Compile Include="FreeAddList.cs" />
+    <Compile Include="LocateAnyAuto.cs" />
+    <Compile Include="GeneralFunction.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CircularProgressControl.resx">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterNotes.resx">
+      <DependentUpon>EnterNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enter Notes.resx">
+      <DependentUpon>Enter Notes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPopUrl.resx">
+      <DependentUpon>SubPopUrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\com.unitedcarexchange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebCosmo.cs" />
+    <Compile Include="webfreeads.cs" />
+    <Compile Include="webleeg.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProductionBL\ProductionBL.csproj">
+      <Project>{5DCB666A-115A-4D23-8E5A-1997688180DA}</Project>
+      <Name>ProductionBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductionInfo\ProductionInfo\ProductionInfo.csproj">
+      <Project>{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}</Project>
+      <Name>ProductionInfo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://unitedcarexchange.com/CarService/CarsService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.unitedcarexchange\</RelPath>
+      <UpdateFromURL>http://unitedcarexchange.com/CarService/CarsService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AutoFillForm_com_unitedcarexchange_CarsService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.unitedcarexchange\CarsService.disco" />
+    <None Include="Web References\com.unitedcarexchange\CarsService.wsdl" />
+    <None Include="Web References\com.unitedcarexchange\MakesInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.unitedcarexchange\ModelsInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.unitedcarexchange\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.unitedcarexchange\UsedCarsInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\eximages.jpg" />
+    <Content Include="Image\logo2.png" />
+    <Content Include="Image\Welcome.bmp" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\logo2 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCarsConnectionString">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarsConnectionStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsConnectionStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsCentralConnectionString">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarsCentralConnectionStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsCentralConnectionStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarsTestConnectionString">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarsTestConnectionStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarsTestConnectionStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCarsConnectionStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsConnectionStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsCentralConnectionStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsCentralConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsCentralConnectionStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsCentralConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsTestConnectionStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarsTestConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsTestConnectionStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarsTestConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsConnectionStringHttpGetIn" />
+  <wsdl:message name="GetCarsConnectionStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsCentralConnectionStringHttpGetIn" />
+  <wsdl:message name="GetCarsCentralConnectionStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsTestConnectionStringHttpGetIn" />
+  <wsdl:message name="GetCarsTestConnectionStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsConnectionStringHttpPostIn" />
+  <wsdl:message name="GetCarsConnectionStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsCentralConnectionStringHttpPostIn" />
+  <wsdl:message name="GetCarsCentralConnectionStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCarsTestConnectionStringHttpPostIn" />
+  <wsdl:message name="GetCarsTestConnectionStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WSProductionSoap">
+    <wsdl:operation name="GetCarsConnectionString">
+      <wsdl:input message="tns:GetCarsConnectionStringSoapIn" />
+      <wsdl:output message="tns:GetCarsConnectionStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <wsdl:input message="tns:GetCarsCentralConnectionStringSoapIn" />
+      <wsdl:output message="tns:GetCarsCentralConnectionStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <wsdl:input message="tns:GetCarsTestConnectionStringSoapIn" />
+      <wsdl:output message="tns:GetCarsTestConnectionStringSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSProductionHttpGet">
+    <wsdl:operation name="GetCarsConnectionString">
+      <wsdl:input message="tns:GetCarsConnectionStringHttpGetIn" />
+      <wsdl:output message="tns:GetCarsConnectionStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <wsdl:input message="tns:GetCarsCentralConnectionStringHttpGetIn" />
+      <wsdl:output message="tns:GetCarsCentralConnectionStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <wsdl:input message="tns:GetCarsTestConnectionStringHttpGetIn" />
+      <wsdl:output message="tns:GetCarsTestConnectionStringHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSProductionHttpPost">
+    <wsdl:operation name="GetCarsConnectionString">
+      <wsdl:input message="tns:GetCarsConnectionStringHttpPostIn" />
+      <wsdl:output message="tns:GetCarsConnectionStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <wsdl:input message="tns:GetCarsCentralConnectionStringHttpPostIn" />
+      <wsdl:output message="tns:GetCarsCentralConnectionStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <wsdl:input message="tns:GetCarsTestConnectionStringHttpPostIn" />
+      <wsdl:output message="tns:GetCarsTestConnectionStringHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSProductionSoap" type="tns:WSProductionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCarsConnectionString">
+      <soap:operation soapAction="http://tempuri.org/GetCarsConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <soap:operation soapAction="http://tempuri.org/GetCarsCentralConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <soap:operation soapAction="http://tempuri.org/GetCarsTestConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSProductionSoap12" type="tns:WSProductionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCarsConnectionString">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsConnectionString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsCentralConnectionString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <soap12:operation soapAction="http://tempuri.org/GetCarsTestConnectionString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSProductionHttpGet" type="tns:WSProductionHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCarsConnectionString">
+      <http:operation location="/GetCarsConnectionString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <http:operation location="/GetCarsCentralConnectionString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <http:operation location="/GetCarsTestConnectionString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSProductionHttpPost" type="tns:WSProductionHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCarsConnectionString">
+      <http:operation location="/GetCarsConnectionString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsCentralConnectionString">
+      <http:operation location="/GetCarsCentralConnectionString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsTestConnectionString">
+      <http:operation location="/GetCarsTestConnectionString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSProduction">
+    <wsdl:port name="WSProductionSoap" binding="tns:WSProductionSoap">
+      <soap:address location="http://unitedcarexchange.com/CarService/WSProduction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSProductionSoap12" binding="tns:WSProductionSoap12">
+      <soap12:address location="http://unitedcarexchange.com/CarService/WSProduction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSProductionHttpGet" binding="tns:WSProductionHttpGet">
+      <http:address location="http://unitedcarexchange.com/CarService/WSProduction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSProductionHttpPost" binding="tns:WSProductionHttpPost">
+      <http:address location="http://unitedcarexchange.com/CarService/WSProduction.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

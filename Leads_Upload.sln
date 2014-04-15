@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFillForm", "AutoFillForm\AutoFillForm.csproj", "{CBEC14B8-D294-4F56-AD46-06AB172FC125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionBL", "ProductionBL\ProductionBL.csproj", "{5DCB666A-115A-4D23-8E5A-1997688180DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionInfo", "ProductionInfo\ProductionInfo\ProductionInfo.csproj", "{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBEC14B8-D294-4F56-AD46-06AB172FC125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEC14B8-D294-4F56-AD46-06AB172FC125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEC14B8-D294-4F56-AD46-06AB172FC125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEC14B8-D294-4F56-AD46-06AB172FC125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCB666A-115A-4D23-8E5A-1997688180DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCB666A-115A-4D23-8E5A-1997688180DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCB666A-115A-4D23-8E5A-1997688180DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCB666A-115A-4D23-8E5A-1997688180DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6FAF72-25EF-4E05-9B4A-E483308BD7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
